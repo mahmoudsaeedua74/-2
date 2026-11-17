@@ -1,0 +1,49 @@
+/* DUKKAN HDOOM — skin for platform-rendered partials (variant options, custom fields, filters, widgets).
+   Selectors stay scoped to our wrappers so platform markup changes degrade to plain, usable controls. */
+
+/* ---------- Variant options (vitrin:v2/products/options/variant_options.jinja, list style) ---------- */
+.dh-pdp__options{display:grid;gap:18px}
+.dh-pdp__options .product-options__group{display:grid;gap:10px}
+.dh-pdp__options .product-options__label,
+.dh-pdp__options legend,
+.dh-pdp__options label:not([class*="item"]){font-family:var(--dh-f-mono);font-size:var(--dh-t-xs);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dh-on-bone-muted)}
+html[lang^="ar"] .dh-pdp__options .product-options__label{letter-spacing:0;font-family:var(--dh-f-body);font-size:var(--dh-t-sm)}
+.dh-pdp__options [data-selected-option-value]{color:var(--dh-ink);text-transform:none;letter-spacing:0}
+.dh-pdp__options ul{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.dh-pdp__options .product-options__item{display:inline-flex;align-items:center;justify-content:center;min-width:52px;min-height:46px;padding:0 14px;border:1.5px solid var(--dh-line-bone);background:transparent;color:var(--dh-ink);font-family:var(--dh-f-mono);font-weight:600;font-size:var(--dh-t-sm);cursor:pointer;transition:border-color var(--dh-d-2),background var(--dh-d-2),color var(--dh-d-2)}
+.dh-pdp__options .product-options__item:hover{border-color:var(--dh-ink)}
+.dh-pdp__options .product-options__item.active{background:var(--dh-ink);border-color:var(--dh-ink);color:var(--dh-bone)}
+.dh-pdp__options .product-options__item.disabled,
+.dh-pdp__options .product-options__item[disabled]{opacity:.4;text-decoration:line-through}
+.dh-pdp__options select{width:100%;min-height:50px;padding:0 14px;border:1.5px solid var(--dh-line-bone);background:var(--dh-bone);color:var(--dh-ink);border-radius:0}
+
+/* ---------- Custom input fields / bundles ---------- */
+.dh-pdp__fields{display:grid;gap:14px}
+.dh-pdp__fields input[type="text"],.dh-pdp__fields input[type="number"],.dh-pdp__fields input[type="date"],
+.dh-pdp__fields textarea,.dh-pdp__fields select{width:100%;min-height:48px;padding:10px 14px;border:1.5px solid var(--dh-line-bone);background:transparent;color:var(--dh-ink);border-radius:0}
+.dh-pdp__fields textarea{min-height:96px}
+.dh-pdp__fields input:focus,.dh-pdp__fields textarea:focus,.dh-pdp__fields select:focus{border-color:var(--dh-brick);outline:none}
+.dh-pdp__form .btn{border-radius:0}
+
+/* ---------- Listing filters (vitrin:products/filters.jinja) ---------- */
+.dh-filter__platform .attribute-group{border-bottom:1px solid var(--dh-line-ink);padding-block:6px}
+.dh-filter__platform .attribute-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;cursor:pointer;font-weight:700}
+.dh-filter__platform .attribute-name{font-weight:700}
+.dh-filter__platform .attribute-arrow{color:var(--dh-on-ink-muted)}
+.dh-filter__platform .attribute-body{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:14px}
+.dh-filter__platform .attribute-body-collapse{display:none}
+.dh-filter__platform .attribute-label{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border:1px solid var(--dh-line-ink);cursor:pointer;font-size:var(--dh-t-sm)}
+.dh-filter__platform .attribute-label:has(input:checked){background:var(--dh-bone);color:var(--dh-ink);border-color:var(--dh-bone)}
+.dh-filter__platform input[type="checkbox"]{accent-color:var(--dh-brick)}
+.dh-filter__platform .attribute-color{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.dh-filter__platform .filter-count{color:var(--dh-on-ink-muted);font-size:var(--dh-t-xs)}
+.dh-filter__platform button[type="submit"],.dh-filter__platform .attribute-price-body{display:none}
+
+/* ---------- Platform widgets on dark surfaces (cart, PDP) ---------- */
+.dh-cartpage__extras,.dh-pdp__form > div:not([class^="dh-"]){font-size:var(--dh-t-sm)}
+.dh-cartpage__extras img{display:inline-block}
+.dh-cartpage__box .progress,.dh-cartpage__lines .progress{height:6px;background:var(--dh-ink-3);border-radius:3px;overflow:hidden}
+.dh-cartpage__box .progress-bar,.dh-cartpage__lines .progress-bar{background:var(--dh-brick)}
+
+/* Store messages / region dialog stay readable on our dark chrome */
+.dh-header + .alert,.store-messages{font-size:var(--dh-t-sm)}

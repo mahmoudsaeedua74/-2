@@ -1,0 +1,66 @@
+/* DUKKAN HDOOM — design tokens. @font-face lives in layout.jinja so URLs go through asset_url. */
+
+:root{
+  /* Brand palette */
+  --dh-ink:#0D0D0D;
+  --dh-ink-2:#161616;
+  --dh-ink-3:#232323;
+  --dh-bone:#EFEAE0;
+  --dh-bone-2:#E4DDD0;
+  --dh-bone-3:#D6CEBF;
+  --dh-brick:#E2531F;
+  --dh-brick-deep:#B93E12;
+  --dh-olive:#5B5F45;
+  --dh-concrete:#8A8680;
+  /* Text on surfaces — all pairs ≥ 4.5:1 for body copy */
+  --dh-on-ink:#EFEAE0;
+  --dh-on-ink-muted:#A8A39B;   /* 7.4:1 on ink */
+  --dh-on-bone:#0D0D0D;
+  --dh-on-bone-muted:#57534D;  /* 6.3:1 on bone */
+  --dh-line-ink:rgba(239,234,224,.14);
+  --dh-line-bone:rgba(13,13,13,.14);
+
+  /* Type families */
+  --dh-f-display:'DH Alexandria','DH Anton',system-ui,sans-serif;
+  --dh-f-body:'DH Plex Arabic','DH Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --dh-f-latin-display:'DH Anton','DH Alexandria',Impact,sans-serif;
+  --dh-f-mono:'DH Grotesk','DH Plex Arabic',ui-monospace,monospace;
+
+  /* Fluid type scale (min @320px → max @1440px) */
+  --dh-t-xs:clamp(.6875rem,.66rem + .12vw,.75rem);
+  --dh-t-sm:clamp(.8125rem,.79rem + .12vw,.875rem);
+  --dh-t-md:clamp(.9375rem,.9rem + .2vw,1.0625rem);
+  --dh-t-lg:clamp(1.125rem,1.05rem + .4vw,1.375rem);
+  --dh-t-xl:clamp(1.375rem,1.2rem + .9vw,2rem);
+  --dh-t-2xl:clamp(1.75rem,1.4rem + 1.8vw,3.25rem);
+  --dh-t-3xl:clamp(2.25rem,1.6rem + 3.4vw,5.25rem);
+  --dh-t-4xl:clamp(2.75rem,1.7rem + 5.6vw,8.5rem);
+  --dh-t-mega:clamp(3.5rem,1.4rem + 11vw,15rem);
+
+  /* Spacing (4/8 rhythm) */
+  --dh-s-1:4px;--dh-s-2:8px;--dh-s-3:12px;--dh-s-4:16px;--dh-s-5:24px;--dh-s-6:32px;--dh-s-7:48px;--dh-s-8:64px;--dh-s-9:96px;--dh-s-10:128px;
+  --dh-gutter:clamp(16px,4.2vw,56px);
+  --dh-section-y:clamp(72px,11vw,168px);
+  --dh-max:1440px;
+
+  /* Shape & depth */
+  --dh-r-0:0;--dh-r-1:2px;--dh-r-2:6px;--dh-r-pill:999px;
+  --dh-shadow-1:0 1px 2px rgba(0,0,0,.18),0 8px 24px -12px rgba(0,0,0,.45);
+  --dh-shadow-2:0 30px 80px -30px rgba(0,0,0,.7);
+
+  /* Motion tokens */
+  --dh-ease-out:cubic-bezier(.16,1,.3,1);
+  --dh-ease-in-out:cubic-bezier(.76,0,.24,1);
+  --dh-ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --dh-d-1:140ms;--dh-d-2:240ms;--dh-d-3:420ms;--dh-d-4:700ms;--dh-d-5:1100ms;
+
+  /* Layers */
+  --dh-z-header:60;--dh-z-drawer:80;--dh-z-modal:90;--dh-z-toast:100;
+
+  --dh-header-h:64px;
+  --dh-safe-b:env(safe-area-inset-bottom,0px);
+  --dh-safe-t:env(safe-area-inset-top,0px);
+  color-scheme:dark;
+}
+@media (min-width:1024px){:root{--dh-header-h:76px}}
+@media (prefers-reduced-motion:reduce){:root{--dh-d-1:0ms;--dh-d-2:0ms;--dh-d-3:0ms;--dh-d-4:0ms;--dh-d-5:0ms}}
